@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인 재무설계 서비스 - Financial Planning Roadmap</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span>Financial Roadmap</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#overview" class="nav-link">서비스 소개</a></li>
+                <li><a href="#problem" class="nav-link">문제 분석</a></li>
+                <li><a href="#solution" class="nav-link">솔루션</a></li>
+                <li><a href="#business" class="nav-link">비즈니스 모델</a></li>
+                <li><a href="#team" class="nav-link">팀</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>개인 맞춤형 재무설계 서비스</h1>
+                <p>당신의 인생 목표와 재무 상태에 맞춘 <strong>맞춤형 금융 로드맵</strong>을 제안하고, 
+                   변화하는 상황에 따라 <strong>실시간으로 리밸런싱</strong>해주는 올인원 솔루션</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">서비스 시작하기</button>
+                    <button class="btn btn-secondary">자세히 알아보기</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="chart-container">
+                    <canvas id="heroChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section overview">
+        <div class="container">
+            <h2>서비스 개요</h2>
+            <p class="section-subtitle">단순한 상품 추천을 넘어 생애 주기를 아우르는 종합 재무계획을 제공합니다</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-road"></i>
+                    <h3>맞춤형 로드맵</h3>
+                    <p>저축·투자·보험·세무까지 개인별 맞춤 계획</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-sync"></i>
+                    <h3>실시간 리밸런싱</h3>
+                    <p>변화하는 상황에 따른 즉시 재계산</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>종합 솔루션</h3>
+                    <p>생애 주기 전반의 재무 계획 관리</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Analysis Section -->
+    <section id="problem" class="section problem">
+        <div class="container">
+            <h2>문제 정의 및 검증</h2>
+            <p class="section-subtitle">20~30대 직장인 대상 인터뷰와 113명 설문조사를 통한 실증 분석</p>
+            
+            <div class="research-overview">
+                <div class="research-card">
+                    <h3><i class="fas fa-users"></i> 인터뷰 조사</h3>
+                    <div class="research-stats">
+                        <div class="stat">
+                            <span class="number">6명</span>
+                            <span class="label">사회초년생·직장인</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">2명</span>
+                            <span class="label">재무·세무 전문가</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="research-card">
+                    <h3><i class="fas fa-chart-bar"></i> 온라인 설문</h3>
+                    <div class="research-stats">
+                        <div class="stat">
+                            <span class="number">113명</span>
+                            <span class="label">총 응답자</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">75%</span>
+                            <span class="label">재무계획 미흡</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problem-results">
+                <div class="result-section">
+                    <h3>재무계획의 주요 어려움</h3>
+                    <div class="chart-container">
+                        <canvas id="difficultyChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="result-section">
+                    <h3>기존 해결책 시도</h3>
+                    <div class="solution-attempts">
+                        <div class="attempt-item">
+                            <div class="attempt-bar" data-percentage="58.3">
+                                <span class="attempt-label">금융 앱</span>
+                                <span class="attempt-percentage">58.3%</span>
+                            </div>
+                        </div>
+                        <div class="attempt-item">
+                            <div class="attempt-bar" data-percentage="51.0">
+                                <span class="attempt-label">지인/가족 조언</span>
+                                <span class="attempt-percentage">51.0%</span>
+                            </div>
+                        </div>
+                        <div class="attempt-item">
+                            <div class="attempt-bar" data-percentage="36.5">
+                                <span class="attempt-label">SNS 정보</span>
+                                <span class="attempt-percentage">36.5%</span>
+                            </div>
+                        </div>
+                        <div class="attempt-item">
+                            <div class="attempt-bar" data-percentage="8.3">
+                                <span class="attempt-label">전문가 상담</span>
+                                <span class="attempt-percentage">8.3%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="key-insight">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <h4>핵심 인사이트</h4>
+                        <p><strong>74.5%</strong>가 기존 방법으로 문제 해결 안됨<br>
+                           <strong>63.5%</strong>가 새로운 서비스에 긍정적 반응</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="section solution">
+        <div class="container">
+            <h2>솔루션</h2>
+            <p class="section-subtitle">검증된 문제를 해결하는 4가지 핵심 기능</p>
+            
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>맞춤형 로드맵</h3>
+                    <p>사용자의 자산·소득·지출·목표를 입력하거나 마이데이터 API로 자동 연동하여, 월별 저축·투자·보험 계획을 제안</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>실시간 리밸런싱</h3>
+                    <p>결혼·주택구입·이직 등 이벤트 발생 시 즉시 재계산 및 대안 제시</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>시각적 가이드</h3>
+                    <p>계획 대비 실적, 목표 달성률을 대시보드·그래프 형태로 직관적 제공</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>정보 통합</h3>
+                    <p>금융상품·정부지원 제도를 개인 조건에 맞게 필터링 및 비교</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Model Section -->
+    <section id="business" class="section business">
+        <div class="container">
+            <h2>비즈니스 모델</h2>
+            <p class="section-subtitle">지속가능한 수익구조와 핵심 파트너십</p>
+            
+            <div class="business-grid">
+                <div class="business-card">
+                    <h3><i class="fas fa-users"></i> 고객 세그먼트</h3>
+                    <p>20~40대 직장인·자영업자·청년층<br>자산 형성 초기 단계</p>
+                </div>
+                <div class="business-card">
+                    <h3><i class="fas fa-dollar-sign"></i> 수익 구조</h3>
+                    <ul>
+                        <li>프리미엄 구독 (고급 분석·전문가 상담)</li>
+                        <li>제휴 금융상품 중개 수수료</li>
+                        <li>데이터 기반 B2B 리포트</li>
+                    </ul>
+                </div>
+                <div class="business-card">
+                    <h3><i class="fas fa-chart-pie"></i> 비용 구조</h3>
+                    <ul>
+                        <li>개발/유지보수</li>
+                        <li>금융데이터 API 비용</li>
+                        <li>고객 지원 및 마케팅</li>
+                    </ul>
+                </div>
+                <div class="business-card">
+                    <h3><i class="fas fa-handshake"></i> 핵심 파트너</h3>
+                    <ul>
+                        <li>마이데이터 사업자</li>
+                        <li>금융기관(은행·보험·증권)</li>
+                        <li>세무·재무 전문가</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section team">
+        <div class="container">
+            <h2>팀 소개</h2>
+            <p class="section-subtitle">금융과 기술의 전문성을 결합한 팀</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>손동주</h3>
+                    <p class="role">경영학부</p>
+                    <p>재무설계 및 비즈니스 모델 전문</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>허정진</h3>
+                    <p class="role">응용통계학부</p>
+                    <p>데이터 분석 및 통계 모델링</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>홍서연</h3>
+                    <p class="role">산업공학과</p>
+                    <p>시스템 최적화 및 프로세스 설계</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Financial Roadmap</span>
+                    </div>
+                    <p>개인 맞춤형 재무설계로 더 나은 미래를 만들어갑니다.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>서비스</h4>
+                        <ul>
+                            <li><a href="#">재무 로드맵</a></li>
+                            <li><a href="#">투자 가이드</a></li>
+                            <li><a href="#">보험 설계</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>회사</h4>
+                        <ul>
+                            <li><a href="#">팀 소개</a></li>
+                            <li><a href="#">채용</a></li>
+                            <li><a href="#">블로그</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>지원</h4>
+                        <ul>
+                            <li><a href="#">고객센터</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">이용약관</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Financial Roadmap. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
