@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TODO 앱 - UI Mock</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>TODO 앱 (UI Mock)</h1>
+      <nav id="main-nav" class="nav hidden">
+        <span id="user-email" class="user-email"></span>
+        <button id="logoutBtn" class="btn small">로그아웃</button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Auth view (로그인 / 회원가입) -->
+      <section id="auth-view" class="card">
+        <div class="tabs">
+          <button id="tab-login" class="tab active">로그인</button>
+          <button id="tab-signup" class="tab">회원가입</button>
+        </div>
+
+        <form id="login-form" class="form">
+          <label>이메일
+            <input id="login-email" type="email" placeholder="you@example.com" required />
+          </label>
+          <label>비밀번호
+            <input id="login-password" type="password" placeholder="비밀번호" required />
+          </label>
+          <div class="form-actions">
+            <button id="loginBtn" class="btn primary" type="submit">로그인</button>
+          </div>
+        </form>
+
+        <form id="signup-form" class="form hidden">
+          <label>이메일
+            <input id="signup-email" type="email" placeholder="you@example.com" required />
+          </label>
+          <label>비밀번호
+            <input id="signup-password" type="password" placeholder="비밀번호 (4자 이상)" required />
+          </label>
+          <div class="form-actions">
+            <button id="signupBtn" class="btn primary" type="submit">회원가입</button>
+          </div>
+        </form>
+
+        <p class="hint">이 UI는 미리보기용 모의 구현입니다. (서버 없음 — localStorage 사용)</p>
+      </section>
+
+      <!-- TODO view -->
+      <section id="todo-view" class="card hidden">
+        <div class="todo-header">
+          <input id="new-todo-input" type="text" placeholder="새로운 할 일을 입력하세요" />
+          <button id="addTodoBtn" class="btn">추가</button>
+        </div>
+
+        <ul id="todo-list" class="todo-list">
+          <!-- list items injected here -->
+        </ul>
+
+        <p class="hint">각 항목에서 완료(체크), 수정, 삭제가 가능합니다.</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>UI mock — HTML/CSS/JS만 사용. 개발/테스트용.</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
